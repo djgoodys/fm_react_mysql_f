@@ -1,0 +1,796 @@
+*{
+scrollbar-width: thin;
+}
+
+  #tblNewFilter{
+    width:90%;
+}
+
+#divTasks{
+  width:1595px;
+  padding:20px;
+  border: 1px solid black;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height:fit-content;
+  grid-template-columns:repeat(10, 1fr);
+  gap:10px;
+  background-color:white; 
+  color:black;
+  font-weight: 700;
+  overflow:auto;
+  position:sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.divTasksVisible{
+display:grid; 
+grid-template-columns:80% 20%;
+}
+
+#datatable{
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.divTasksHidden{
+  display:none;
+}
+
+#divBtnSubmitTasks{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  background-color: green;
+  width:100%;
+}
+.notes{
+  width: 100%;
+  height:min-content(100px 200px);
+  overflow-y: scroll;
+}
+
+.btnUpdateNotesVisible{
+  display:block;
+}
+
+.btnUpdateNotesHidden{
+  background-color: green;
+  display:none;
+}
+
+
+
+.switch-invisible{
+  display:none;
+}
+
+.selectUserVisible{
+  display:block;
+}
+
+.server-message-visible{
+  display: block;
+  height: fit-content;
+  background-color: red;
+  color:white;
+  width:790px;
+  position: relative;
+  left: -10px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.server-message-hidden{
+  display: none;
+}
+
+.container-Addtasks{
+  display:flex;
+  flex-direction:row;
+  align-items:left;
+  justify-content:flex-start;
+  width:100%;
+  height:200px;
+  background-color:rgb(89, 175, 237);
+  color:white;
+  z-index:1;
+  overflow-x:hidden;
+  transition:0.5s;
+  border:4px solid black;
+}
+.closeNav{
+    display:none;
+}
+.openNav{
+  background-color: black;
+    height:35%;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+    overflow-x:hidden;
+    padding-top:60px;
+    transition:0.5s;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+}
+.nav-item{
+    padding:8px 8px 8px 32px;
+    text-decoration:none;
+    font-size:1.25rem;
+    color:yellow;
+    display:block;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.myButton {
+  background-color: #97D09D; 
+  border:3px solid green;
+  color: black;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:120px; 
+  height:40px;
+  border-radius: 30px;
+  box-shadow: 4px 4px black;
+  }
+.myButton3 {
+  background-color: #4CAF50;
+  border: none;
+  color: yellow;
+  font-size:1.5em;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:15vw; 
+  height:20vhw; 
+  border-radius:25px;
+  box-shadow:4px 4px black;
+  margin-top:20px;
+  } 
+  
+  .dropdown:hover > .dropdown-content{
+    display:grid;
+  }
+
+  .dropdown-content{
+    display:none;
+  }
+.myButton2 {
+  background-color: #4CAF50;
+  border: none;
+  color: yellow;
+  font-weight:bold;
+  font-size:1.25vw;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:230px; 
+  height:30px; 
+  transform: scale(1.05);
+  border-radius:8px;
+  }
+
+.myButton2:hover{
+  transform: scale(1.5);
+  transition: transform 0.3s ease-in-out; 
+  background-color:black;
+  color:white;
+  z-index:2;
+}
+
+.myButtonMobile {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  font-size:1.25em;
+  font-family:Arial, sans-serif;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:8vw; 
+  height:70px; 
+  border-radius: 5px;
+  box-shadow: 4px 4px black;
+  }
+
+  #tblNavigation{
+      display:flex;
+      flex-direction:row;
+      text-align: center; 
+      display: table;
+      vertical-align: middle;
+      margin:0 auto;
+  }
+
+  #tblFilterTypes{
+    width:50%;
+    margin:0 auto;
+    background-color: red;
+  }
+
+  #filter-types-nav{
+    display:flex;
+    justify-content:space-evenly; 
+    align-items:center; 
+    margin:0 auto; 
+    margin-top:50px; 
+    border:1px solid black; 
+    width:50%;
+    background-color: green;
+    color:white;
+    border-radius: 8px;
+  }
+
+  #filter-types-nav span:hover{
+    background-color: white;
+    color:green;
+  }
+
+  #filter-types-nav span{
+    padding: 5px;
+  }
+
+  #tblFilters {
+    width:90%;
+    margin-top: 20px;
+  }
+
+  #tblEditFilter {
+    width:90%;
+    border:1px solid black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 20px;
+  }
+
+  #tblEditFilter th, #tblEditFilter td {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: none;
+    border-bottom: none;
+}
+
+  #tblEditFilter th{
+    text-align: center;
+    background-color: rgb(231, 238, 253);
+  }
+
+  #tblUsers{
+    width:80%;
+  }
+
+  .myButton2Mobile {
+  background-color: #4CAF50; 
+  border: none;
+  color: yellow;
+  font-weight:bold;
+  font-size:1.25vw;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:230px; 
+  height:30px; 
+  }
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.btnTasks{
+  border-radius: 8px;
+  background-color:white;
+  color:green;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  padding: 1px 1px;
+  text-align: center;
+  height:60%;
+  width: 100%;
+  vertical-align: middle;
+  border:3px solid white;
+  margin:25px 20px;
+}
+
+.BtnSubmitTasksVisible{
+  display:block;
+  background-color:green;
+  height:100px;
+
+}
+.BtnSubmitTasksHidden{
+  display:none;
+}
+
+.FiltersNeeded {
+text-align:center;
+
+}
+.FiltersNeeded_Amount {
+text-align:center;
+
+width:5px;
+}
+
+
+input[type="hidden"] {
+    display: none;
+}
+
+  .Color-Light{
+background-color:#eeeee4;
+  }
+  .Color-Dark{
+background-color:black;
+  }
+
+.Light-tdPlain{
+color:purple;
+}
+
+.switch {
+   position: relative;
+    z-index:1;
+   display: inline-block;
+   width: 60px;
+   height: 34px;
+ }
+ 
+ 
+ .switch input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+ }
+ 
+
+ .slider {
+   position: absolute;
+z-index:1;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #ccc;
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+ 
+ .slider:before {
+   position: absolute;
+z-index:1;
+   content: "";
+   height: 26px;
+   width: 26px;
+   left: 4px;
+   bottom: 4px;
+   background-color: white;
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+ 
+ input:checked + .slider {
+   background-color: #07ff10;
+ }
+ 
+ input:focus + .slider {
+   box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ input:checked + .slider:before {
+   -webkit-transform: translateX(26px);
+   -ms-transform: translateX(26px);
+   transform: translateX(26px);
+ }
+ 
+
+ .slider.round {
+   border-radius: 34px;
+z-index: -1;
+ }
+ 
+ .slider.round:before {
+   border-radius: 50%;
+z-index: -1;
+ }
+
+   .EditRow {
+      background-color:#32a852;
+      width:100%;
+      color: #9CCC65;
+   }
+.EditRow tr{
+width:100%;
+}
+
+.EditRow div{
+background-color: #857a7a;
+}
+
+
+#FilterRowTextArea{
+overflow: auto;
+max-width:200px;
+max-height:80;
+flex-shrink: 2;
+
+font-size: min(max(6px, 2vw), 12px);
+-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+
+scrollbar-width: thin;
+}
+.DisplayNone{
+display:none;
+}
+
+   .TextAreaFilters{
+  height: 20vh;
+  width: 8vw;
+  position:relative;
+  background-color:  white;
+  color:blueviolet;
+  font-weight: bold;
+  font-size: min(max(6px, 2vw), 12px);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow:auto;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+   }
+
+   .UnitInfoClosed{
+    background-color: green;
+    color:white;
+    border-radius: 8px;
+    padding:4px;
+    display:none;
+   }
+
+   .UnitInfoOpen{
+    background-color: green;
+    font-weight: 600;
+    color:white;
+    height:300px;
+    margin-left:100px;
+    display:table;
+    width:400px;
+    height:fit-content;
+    border-radius: 8px;
+    margin:30px;
+   }
+
+   #tblListEquipment thead th{
+    position: sticky;
+    white-space: nowrap;
+    z-index: 2;
+    background-color: black;
+    color:white;
+    text-align: center;
+   }
+
+   #tblListEquipment td, th{
+    padding:0 15px 0 15px;
+    text-align: center;
+   }
+
+   #tblListEquipment {
+    margin:0 auto;
+   }
+
+   #tblTasks tr{
+    margin:0 auto;
+    font-size: 1.25em;
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    padding:5px;
+   }
+
+   #menu {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr); 
+    width:40%;
+    height:30px;
+    background-color:white; 
+    color:green; 
+    border-radius:8px;
+    margin:20px 0 20px 150px;
+   }
+
+   #menu span:hover {
+    background-color: rgb(198, 250, 149);
+    color: whitesmoke;
+}
+
+
+   .UnitInfoOpen td{
+    text-align: left;
+   }
+
+   .divOverdue{
+    width:70px;
+    height:70px;
+    margin:9px 5px;
+    border: 2px solid black;
+    background-color: green;
+    color:white;
+    border-radius: 8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:16px;
+    font-weight: bold;
+    }
+
+    .divOverdueChecked{
+      width:70px;
+      height:70px;
+      margin:9px 5px;
+      border:2px solid red;
+      background-color: red;
+      color:white;
+      border-radius: 8px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      padding:16px;
+      font-weight: bold;
+      }
+
+      .LiSearch{
+        display:flex;
+        flex-direction:row;
+        text-align: left;
+        display: table;
+        vertical-align: middle;
+        margin:0 auto;
+        list-style-type: none;
+      }
+
+      .ULSearchVisible{
+        display:block;
+      }
+
+      .ULSearchHidden{
+        display:none;
+      }
+
+      .notoverdue{
+        background-color: white;
+        color:black;
+      }
+      .overdue{
+        background-color: red;
+        color:white;
+      }
+    #ULsearch-results{
+      display:flex;
+      flex-direction:row;
+      text-align: center;
+      display: table;
+      vertical-align: middle;
+      margin:0 auto;
+      }
+
+      .Bydate-item{
+        width:100%;
+        height:100%;
+        display:none;
+        flex-direction:row;
+        text-align: center;
+        vertical-align: middle;
+        margin:0 auto;
+        list-style-type: none;
+      }
+
+      
+.Bydate-container{
+  
+  background-color: #97D09D; 
+  border:3px solid green;
+  color: black;
+  font-size:1em;
+  font-family:Arial, sans-serif;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:fit-content; 
+  padding:5px 20px;
+  height:40px;
+  border-radius: 30px;
+  box-shadow: 4px 4px black;
+  margin:23px 0 0 20px;
+}
+
+    #search-input{
+      width:130px;
+    }
+    .search {
+      margin-top:20px;
+      }
+
+      #ULsearch-results li:hover{
+      background-color: #32a852;
+      color: whitesmoke;
+
+      }
+   .Toolbar{
+    background-color: white;
+    color:green;
+    height:300px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto;
+    flex-direction:row;
+    gap:40px;
+    width:100%;
+    height:fit-content;
+    margin-top:0px;
+   } 
+
+    .DatatableUnitInfoCloseButton{
+      background-color: white;
+      color:green;
+      font-weight: bold;
+      border-radius: 8px;
+      padding:4px;
+    }
+
+   .FilterRow {
+
+      min-width: 150px;
+
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+  .FilterRow div {
+
+background-color:transparent;
+  }
+
+.fselect {
+border-radius: 5px;
+}
+
+.nonEditable {
+
+background-color:whitesmoke;
+border-radius: 5px;
+width:4em;
+color:aqua;
+}
+
+   table.FilterRow tr:hover td {
+      background-color:rgb(188, 37, 173);
+      color:white;
+      } 
+
+a{
+    a:link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a:visited {
+        color: pink;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      
+      a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    }
+
+
+.tableTasks{
+width: 100%; 
+border: none;
+margin-left:20px;
+margin-right:20px;
+
+}
+
+.ftype{
+background-color: #32a852;
+color:white;
+  width:120px;
+  height:30px;
+  border:0px;
+  outline:none;
+}
+.selectWrapper{
+  border-radius:5px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc;
+  text-align: right;
+}
+
+.myTable {
+  border-collapse: collapse;  
+  width: 100%;
+  border: 1px solid #857a7a;
+  margin:20px;
+  margin-top: 0px;
+  height:fit-content;
+}
+        
+.myTable th {
+  background-color:green;
+  color:white;
+  text-align:left;
+  font-size: 1rem;
+}
+
+.myTable td {
+vertical-align: middle;
+padding: 2px; 
+}
+
+.myTable tr{  
+border-bottom: 1px solid #ddd;   
+}
+
+.editme {
+  text-align:center;
+  width:200px;
+  background-color:blue;
+  height:60px;
+}
+
+.filter{
+  text-align:center;
+  width:200px;
+  background-color:orange; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
